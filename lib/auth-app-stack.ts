@@ -44,13 +44,16 @@ export class AuthAppStack extends cdk.Stack {
       "SignupFn",
       'signup.ts'
     );
-    // NEW
+    // Unchanged
     this.addAuthRoute(
       "confirm_signup",
       "POST",
       "ConfirmFn",
       "confirm-signup.ts"
     );
+    // NEW
+    this.addAuthRoute('signout', 'GET', 'SignoutFn', 'signout.ts');
+    this.addAuthRoute('signin', 'POST', 'SigninFn', 'signin.ts');
   }
   // NEW
   private addAuthRoute(
